@@ -1,0 +1,27 @@
+-- step 1
+
+-- create database sales_example;
+
+-- step 2
+
+--mysql
+-- id int primary key auto_increment,
+-- postgres
+-- id serial primary key,
+
+create table sales(
+    id serial primary key,
+    date_created date default (current_date),
+    date_fulfilled date,
+    customer_name varchar(300) not null,
+    product_name varchar(300) not null,
+    volume numeric(10,2) not null check(volume>=0),
+    is_recurring boolean default false,
+    is_disputed boolean default false
+);
+
+
+-- step 3 inserting
+
+INSERT into sales (date_fulfilled,customer_name,product_name,volume,is_recurring,is_disputed) 
+values(null,'Max amini', 'a book', 12.99, true,true),(null,'learning inc','course bundle',4889.43,false,false);

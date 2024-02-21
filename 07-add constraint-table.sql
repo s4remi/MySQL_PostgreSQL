@@ -1,7 +1,8 @@
 -- using not null to make sure we have value for required columns:
 -- mysql:
 
--- ALTER TABLE users
+
+ALTER TABLE users
 modify column full_name  varchar(300) not null,
 modify column current_status enum('unemployed','self-employed','employed')  NOT NULL;
 ALTER TABLE employers
